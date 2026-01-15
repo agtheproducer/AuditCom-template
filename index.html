@@ -5,170 +5,132 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="src/main.js" type="module" defer></script>
-
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="src/main.js" type="module" defer></script>
 </head>
 
 <body>
-    
-    <header>
-        <img src="" alt="Logo">
+
+    <header class="site-header">
+        <a class="brand" href="#home">
+            <img src="" alt="Logo">
+        </a>
+
+        <nav class="site-nav" aria-label="Main navigation">
+            <a href="#home">Home</a>
+            <a href="#club">Club</a>
+            <a href="#stats">Stats</a>
+            <a href="#form">Form</a>
+        </nav>
+    </header>
+    <main>
+        <!--HERO OF THE PAGE-->
+        <section id="home" class="hero">
+            <div class="hero-left">
+                <h1>
+                    Plus que <span data-bind-global="count"></span> equipe de Suisse Romande
+                </h1>
+
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit...
+                </p>
+            </div>
+            <div class="hero-right">
+                <img src="#" alt="Happy People">
+            </div>
+        </section>
+
+        <!--Club grid photo-->
+        <section id="club">
+            <section id="teamList"></section>
+        </section>
+
+        <!--Stats-->
+        <section id="stats">
+            <h2>Stats that are going to blow your mind</h2>
+
+            <div class="text_image">
+                <div class="section_left">
+                    <h3>Title</h3>
+                    <p>stats text...</p>
+                </div>
+
+                <div class="section_right">
+                    <img class="image_stats" src="" alt="image of stats">
+                </div>
+            </div>
+            <div class="text_image">
+                <div class="section_left">
+                    <h3>Title</h3>
+                    <p>stats text...</p>
+                </div>
+
+                <div class="section_right">
+                    <img class="image_stats" src="" alt="image of stats">
+                </div>
+            </div>
+            <div class="text_image">
+                <div class="section_left">
+                    <h3>Title</h3>
+                    <p>stats text...</p>
+                </div>
+
+                <div class="section_right">
+                    <img class="image_stats" src="" alt="image of stats">
+                </div>
+            </div>
+            <div class="text_image">
+                <div class="section_left">
+                    <h3>Title</h3>
+                    <p>stats text...</p>
+                </div>
+
+                <div class="section_right">
+                    <img class="image_stats" src="" alt="image of stats">
+                </div>
+            </div>
+
+            <section id="form">
+                <form id="downloadForm">
+                    <input type="text" name="lastName" placeholder="Nom" required>
+                    <input type="text" name="firstName" placeholder="Prénom" required>
+                    <input type="email" name="email" placeholder="Email" required>
+
+                    <input type="checkbox" name="newsletterAgreement" id="consent">
+                    <label for="consent">J'accepte de recevoir la newsletter</label>
+
+                    <button type="submit">Télécharger</button>
+                </form>
+
+                <div id="messageContainer"></div>
+            </section>
+
+            <!-- data-bind-global="count" : Affiche le nombre total de rapports (métadonnées globales) -->
+            <!-- id="teamList" : Conteneur où seront ajoutés dynamiquement les éléments de l'équipe. Le nom de cet ID ne doit pas être modifié.-->
+
+            <!-- id="messageContainer" : Conteneur pour afficher les messages de succès ou d'erreur. Le nom de cet ID ne doit pas être modifié.-->
+
+
+
+            <!-- id="downloadForm" : Formulaire pour télécharger le PDF. Le nom de cet ID ne doit pas être modifié.-->
+        </section>
+    </main>
+    <footer>
+        <section class="logo_and_image">
+            <img class="logo" src="" alt="logo">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id illo consequuntur porro aut et esse? Nam,
+                modi.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id illo consequuntur porro aut et esse? Nam,
+                modi.</p>
+        </section>
         <nav>
             <a href="">Home</a>
             <a href="">Club</a>
             <a href="">Stats</a>
             <a href="">Form</a>
         </nav>
-    </header>
-    <section id="home">
-        <div class="left">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, nisi quaerat repellat quia deleniti
-                repudiandae
-                obcaecati dolores inventore voluptatum magnam eveniet odio aspernatur rem quidem, sed, ab quasi neque!
-                Ullam.</p>
-        </div>
-        <div class="right">
-            <img src="" alt="People Standing Proudly Image">
-        </div>
-        <section class="four_facts">
-            <div class="fact">
-                <h1>Title1</h1>
-                <p>Lorem ipsum, dolor sidedwd ddwdeedoeoff</p>
-            </div>
-            <div class="fact">
-                <h1>Title1</h1>
-                <p>Lorem ipsum, dolor sidedwd ddwdeedoeoff</p>
-            </div>
-            <div class="fact">
-                <h1>Title1</h1>
-                <p>Lorem ipsum, dolor sidedwd ddwdeedoeoff</p>
-            </div>
-            <div class="fact">
-                <h1>Title1</h1>
-                <p>Lorem ipsum, dolor sidedwd ddwdeedoeoff</p>
-            </div>
-        </section>
-        <section id="club">
-            <h1 id="absolute_title">
-                Plus que <span data-bind-global="count"></span> equipe de Suisse Romande
-            </h1>
-            <div class="button-select">
-                <button>DOWNLOAD</button>
-            </div>
-
-       
-            
-        </section>
-    </section>
-    <section id="stats">
-        <div class="title-button">
-            <p>Stats that going to blow your mind</p>
-        </div>
-        <div class="text_image">
-            <div class="section_left">
-                <h2>Title</h2>
-                <p>stats text f jsjjdjdjdjdjdjdjdjdjdjdjdjdjdjd
-                    cjcdjcjdcjd
-                </p>
-            </div>
-            <div class="section_right">
-                <img class="image_stats" src="" alt="image of stats">
-            </div>
-        </div>
-        <div class="text_image">
-            <div class="section_left">
-                <h2>Title</h2>
-                <p>stats text f jsjjdjdjdjdjdjdjdjdjdjdjdjdjdjd
-                    cjcdjcjdcjd
-                </p>
-            </div>
-            <div class="section_right">
-                <img class="image_stats" src="" alt="image of stats">
-            </div>
-        </div>
-        <div class="text_image">
-            <div class="section_left">
-                <h2>Title</h2>
-                <p>stats text f jsjjdjdjdjdjdjdjdjdjdjdjdjdjdjd
-                    cjcdjcjdcjd
-                </p>
-            </div>
-            <div class="section_right">
-                <img class="image_stats" src="" alt="image of stats">
-            </div>
-        </div>
-        <div class="text_image">
-            <div class="section_left">
-                <h2>Title</h2>
-                <p>stats text f jsjjdjdjdjdjdjdjdjdjdjdjdjdjdjd
-                    cjcdjcjdcjd
-                </p>
-            </div>
-            <div class="section_right">
-                <img class="image_stats" src="" alt="image of stats">
-            </div>
-        </div>
-        <div class="text_image">
-            <div class="section_left">
-                <h2>Title</h2>
-                <p>stats text f jsjjdjdjdjdjdjdjdjdjdjdjdjdjdjd
-                    cjcdjcjdcjd
-                </p>
-            </div>
-            <div class="section_right">
-                <img class="image_stats" src="" alt="image of stats">
-            </div>
-        </div>
-    </section>
-    <section id="form">
-        <form action="/submit" method="post">
-            <fieldset>
-                <!-- Nom -->
-                <div class="row">
-                    <label for="titre">Nom:</label>
-                    <input id="Nom" name="Nom" type="text" required autocomplete="off"
-                        placeholder="Ex. : Mustermann" />
-                </div>
-                <!-- Prenom -->
-                <div class="row">
-                    <label for="titre">Prenom:</label>
-                    <input id="Prenom" name="Prenom" type="text" required autocomplete="off"
-                        placeholder="Ex. : Max" />
-                </div>
-                <!-- Mail -->
-                <div class="row">
-                    <label for="email">Email:</label>
-                    <input id="email" name="email" type="email" required
-                        placeholder="Ex. : max.musterman@gmail.com" />
-                </div>
-
-                <!--Multiple choice-->
-                <div class="row">
-                    <label>Subscribe to Newsletter:</label><br>
-                    <input type="radio" id="option1" name="multiple" value="A">
-                    <label for="option1">Subscribe Me</label><br>
-                </div>
-
-            </fieldset>
-
-    </section>
-
-    <!-- data-bind-global="count" : Affiche le nombre total de rapports (métadonnées globales) -->
-
-    <h1 data-bind-global="count"></h1>
-    <!-- id="teamList" : Conteneur où seront ajoutés dynamiquement les éléments de l'équipe. Le nom de cet ID ne doit pas être modifié.-->
-    <section id="teamList"></section>
-    <h1 data-bind-global="count"></h1>
-
-    <!-- id="messageContainer" : Conteneur pour afficher les messages de succès ou d'erreur. Le nom de cet ID ne doit pas être modifié.-->
-    <div id="messageContainer"></div>
-
-
-    <!-- id="downloadForm" : Formulaire pour télécharger le PDF. Le nom de cet ID ne doit pas être modifié.-->
-    <form id="downloadForm">
-    </form>
-
+    </footer>
 </body>
 
 </html>
