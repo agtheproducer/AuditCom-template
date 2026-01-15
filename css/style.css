@@ -1,5 +1,10 @@
 @import "reset.css";
 
 img {
-    width: 250px;
+    width: 50px;
+}
+section#teamList{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
 }

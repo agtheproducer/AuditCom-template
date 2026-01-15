@@ -19,7 +19,7 @@ const API_ENDPOINTS = {
 
 const SELECTORS = {
   teamList: "#teamList",
-  downloadForm: "#downloadForm",
+  downloadForm: "form",
   messageContainer: "#messageContainer",
 };
 
@@ -314,6 +314,7 @@ async function handleFormSubmit(formData) {
 // ============================================================================
 // Event Listeners
 // ============================================================================
+
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
