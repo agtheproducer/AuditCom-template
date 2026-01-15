@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    
     <header>
         <img src="" alt="Logo">
         <nav>
@@ -20,7 +21,7 @@
             <a href="">Form</a>
         </nav>
     </header>
-    <section class="home">
+    <section id="home">
         <div class="left">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, nisi quaerat repellat quia deleniti
                 repudiandae
@@ -30,7 +31,7 @@
         <div class="right">
             <img src="" alt="People Standing Proudly Image">
         </div>
-        <section class="FourFacts">
+        <section class="four_facts">
             <div class="fact">
                 <h1>Title1</h1>
                 <p>Lorem ipsum, dolor sidedwd ddwdeedoeoff</p>
@@ -48,22 +49,121 @@
                 <p>Lorem ipsum, dolor sidedwd ddwdeedoeoff</p>
             </div>
         </section>
-        <section class="CTA">
-            <h1>Plus que </h1> <h1 data-bind-global="count"></h1><h1>equipe de Suisse Romande </h1>
-            <section id="teamList"></section>
+        <section id="club">
+            <h1 id="absolute_title">
+                Plus que <span data-bind-global="count"></span> equipe de Suisse Romande
+            </h1>
+            <div class="button-select">
+                <button>DOWNLOAD</button>
+            </div>
 
-
+       
+            
         </section>
+    </section>
+    <section id="stats">
+        <div class="title-button">
+            <p>Stats that going to blow your mind</p>
+        </div>
+        <div class="text_image">
+            <div class="section_left">
+                <h2>Title</h2>
+                <p>stats text f jsjjdjdjdjdjdjdjdjdjdjdjdjdjdjd
+                    cjcdjcjdcjd
+                </p>
+            </div>
+            <div class="section_right">
+                <img class="image_stats" src="" alt="image of stats">
+            </div>
+        </div>
+        <div class="text_image">
+            <div class="section_left">
+                <h2>Title</h2>
+                <p>stats text f jsjjdjdjdjdjdjdjdjdjdjdjdjdjdjd
+                    cjcdjcjdcjd
+                </p>
+            </div>
+            <div class="section_right">
+                <img class="image_stats" src="" alt="image of stats">
+            </div>
+        </div>
+        <div class="text_image">
+            <div class="section_left">
+                <h2>Title</h2>
+                <p>stats text f jsjjdjdjdjdjdjdjdjdjdjdjdjdjdjd
+                    cjcdjcjdcjd
+                </p>
+            </div>
+            <div class="section_right">
+                <img class="image_stats" src="" alt="image of stats">
+            </div>
+        </div>
+        <div class="text_image">
+            <div class="section_left">
+                <h2>Title</h2>
+                <p>stats text f jsjjdjdjdjdjdjdjdjdjdjdjdjdjdjd
+                    cjcdjcjdcjd
+                </p>
+            </div>
+            <div class="section_right">
+                <img class="image_stats" src="" alt="image of stats">
+            </div>
+        </div>
+        <div class="text_image">
+            <div class="section_left">
+                <h2>Title</h2>
+                <p>stats text f jsjjdjdjdjdjdjdjdjdjdjdjdjdjdjd
+                    cjcdjcjdcjd
+                </p>
+            </div>
+            <div class="section_right">
+                <img class="image_stats" src="" alt="image of stats">
+            </div>
+        </div>
+    </section>
+    <section id="form">
+        <form action="/submit" method="post">
+            <fieldset>
+                <!-- Nom -->
+                <div class="row">
+                    <label for="titre">Nom:</label>
+                    <input id="Nom" name="Nom" type="text" required autocomplete="off"
+                        placeholder="Ex. : Mustermann" />
+                </div>
+                <!-- Prenom -->
+                <div class="row">
+                    <label for="titre">Prenom:</label>
+                    <input id="Prenom" name="Prenom" type="text" required autocomplete="off"
+                        placeholder="Ex. : Max" />
+                </div>
+                <!-- Mail -->
+                <div class="row">
+                    <label for="email">Email:</label>
+                    <input id="email" name="email" type="email" required
+                        placeholder="Ex. : max.musterman@gmail.com" />
+                </div>
+
+                <!--Multiple choice-->
+                <div class="row">
+                    <label>Subscribe to Newsletter:</label><br>
+                    <input type="radio" id="option1" name="multiple" value="A">
+                    <label for="option1">Subscribe Me</label><br>
+                </div>
+
+            </fieldset>
+
     </section>
 
     <!-- data-bind-global="count" : Affiche le nombre total de rapports (métadonnées globales) -->
 
-
+    <h1 data-bind-global="count"></h1>
     <!-- id="teamList" : Conteneur où seront ajoutés dynamiquement les éléments de l'équipe. Le nom de cet ID ne doit pas être modifié.-->
-
+    <section id="teamList"></section>
+    <h1 data-bind-global="count"></h1>
 
     <!-- id="messageContainer" : Conteneur pour afficher les messages de succès ou d'erreur. Le nom de cet ID ne doit pas être modifié.-->
     <div id="messageContainer"></div>
+
 
     <!-- id="downloadForm" : Formulaire pour télécharger le PDF. Le nom de cet ID ne doit pas être modifié.-->
     <form id="downloadForm">
