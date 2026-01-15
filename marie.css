@@ -1,93 +1,192 @@
-@import url("css/reset.css");
-/*A MODIFIER SELON L'EMPLACEMENT*/
-
-@import url("css/style.css");
-
+/* SECTION FORMULAIRE : Le fond en dégradé crée une transition visuelle depuis la section stats
+   Dégradé linéaire : Vert (#B8D279) pour les 50% supérieurs, transparent pour les 50% inférieurs
+   Cela crée un effet de fondu, intégrant le formulaire au design de la page */
 section#form {
-
     background: linear-gradient(to top, #B8D279 0%, #B8D279 50%, transparent 50%, transparent 100%);
-
     padding: 4rem;
-
-    padding: 4rem;
-
 }
+
+/* Conteneur du formulaire : Centré avec max-width pour une largeur optimale du formulaire
+   width: 80% permet la flexibilité, max-width: 500px empêche le formulaire d'être trop large
+   margin: 0 auto centre le formulaire horizontalement
+   box-shadow ajoute de la profondeur, faisant apparaître le formulaire élevé au-dessus du fond */
 form {
-
     border: 1px solid #484848;
-
     border-radius: 30px;
     background-color: rgb(255, 254, 254);
     width: 80%;
+    max-width: 500px;
     margin: 0 auto;
     padding: 2rem;
-
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
+
 #downloadForm h1 {
-
     text-align: center;
-
-    margin-bottom: 1rem;
-
+    margin-bottom: 1.5rem;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 900;
 }
+
+/* Inputs du formulaire : Regroupement des inputs texte et email avec le même style
+   width: 100% fait que les inputs remplissent la largeur du conteneur
+   font-size: 16px empêche le zoom iOS au focus (taille minimale pour mobile)
+   box-sizing: border-box inclut le padding dans le calcul de la largeur
+   transition ajoute un retour visuel fluide au focus */
 #downloadForm input[type="text"],
-
 #downloadForm input[type="email"] {
-
     border: 1px solid #484848;
-
     border-radius: 10px;
-
-
-
     display: block;
-
     width: 100%;
-
-
-
     padding: 1rem;
-
     margin-bottom: 1rem;
-
+    font-size: 16px;
+    font-family: Helvetica, Arial, sans-serif;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    box-sizing: border-box;
 }
+
+/* États de focus : Supprime le contour par défaut du navigateur, ajoute un anneau de focus personnalisé
+   Le changement de border-color fournit un retour visuel clair
+   box-shadow crée un effet de lueur subtil (indicateur de focus accessible)
+   rgba() avec faible opacité crée une lueur verte douce correspondant à la couleur de la marque */
+#downloadForm input[type="text"]:focus,
+#downloadForm input[type="email"]:focus {
+    outline: none;
+    border-color: #27543A;
+    box-shadow: 0 0 0 3px rgba(39, 84, 58, 0.1);
+}
+
+/* Bouton de soumission : Pleine largeur pour un design adapté au mobile
+   Vert foncé (#27543A) correspond à la palette de couleurs de la marque
+   margin: 1.5rem auto 0 centre le bouton avec une marge supérieure
+   transform sur l'état actif fournit un retour tactile */
 #downloadForm button {
-
     border: 0;
-
-    padding: 0.6rem 2rem;
-
+    padding: 0.75rem 2rem;
     background-color: #27543A;
-
     color: white;
-
     border-radius: 10px;
-
-
-
     display: block;
-
-    margin: 0 auto;
-
+    margin: 1.5rem auto 0;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: Helvetica, Arial, sans-serif;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    width: 100%;
 }
+
+#downloadForm button:hover {
+    background-color: #1e3d2a;
+}
+
+/* État actif : scale(0.98) crée un effet "pressé", fournissant un retour tactile
+   Cela améliore l'UX en rendant l'interaction du bouton plus réactive */
+#downloadForm button:active {
+    transform: scale(0.98);
+}
+
 #downloadForm #messageContainer {
-
-    margin: 0 auto;
-
+    margin: 1rem auto;
     padding: 1rem;
-
     text-align: center;
-
+    min-height: 50px;
 }
+
+/* Conteneur de la case à cocher : Flexbox aligne la case et le label horizontalement
+   La propriété gap crée un espacement cohérent (mieux que les marges)
+   align-items: center centre verticalement la case avec le texte du label */
 #checkbox-container {
-
     display: flex;
-
     justify-content: flex-start;
-
     align-items: center;
-
     margin-bottom: 1rem;
+    gap: 0.75rem;
+}
 
-    gap: 1rem;
+#checkbox-container input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+#checkbox-container label {
+    font-size: 14px;
+    cursor: pointer;
+    line-height: 1.4;
+}
+
+/* Styles de messages dynamiques : Utilisés par JavaScript pour afficher le retour du formulaire
+   Les classes modificateurs (.success, .error, .loading) fournissent une distinction visuelle
+   Les messages codés par couleur améliorent l'UX en communiquant clairement le statut */
+.message {
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    font-size: 14px;
+}
+
+.message.success {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.message.error {
+    background-color: #ffebee;
+    color: #c62828;
+}
+
+.message.loading {
+    background-color: #e3f2fd;
+    color: #1565c0;
+}
+
+.progress-container {
+    margin-top: 0.75rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+}
+
+.progress-text {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 12px;
+}
+
+/* Responsive mobile : Point de rupture à 768px (standard tablette/mobile)
+   Padding réduit sur mobile maximise l'espace d'écran
+   width: 100% assure que le formulaire utilise toute la largeur sur petits écrans
+   Border-radius plus petit (20px vs 30px) convient mieux à l'esthétique mobile */
+@media (max-width: 768px) {
+    section#form {
+        padding: 2rem 1.5rem;
+    }
+
+    form {
+        width: 100%;
+        padding: 1.5rem;
+        border-radius: 20px;
+    }
+
+    #downloadForm h1 {
+        font-size: 1.5rem;
+        margin-bottom: 1.25rem;
+    }
+
+    #downloadForm input[type="text"],
+    #downloadForm input[type="email"] {
+        padding: 0.875rem;
+        font-size: 16px;
+    }
+
+    #downloadForm button {
+        padding: 0.875rem;
+    }
 }

@@ -2,135 +2,156 @@
 <html lang="en">
 
 <head>
+    <!-- Encodage des caractères : UTF-8 assure l'affichage correct des caractères français (é, è, à, etc.) -->
     <meta charset="UTF-8" />
+    <!-- Balise meta viewport : Essentielle pour le design responsive, empêche les navigateurs mobiles de zoomer -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SportSystem</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <!-- Ordre de chargement CSS : Styles de base d'abord (style.css), puis styles spécifiques aux composants
+         Cela permet aux styles des composants de surcharger les styles de base si nécessaire -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="amit.css" />
     <link rel="stylesheet" href="marie.css" />
     <link rel="stylesheet" href="amel.css" />
+    <!-- Chargement du script : type="module" active les imports ES6, defer assure que le DOM est prêt avant l'exécution -->
     <script src="src/main.js" type="module" defer></script>
+    
 </head>
 
 <body>
+    <!-- Navigation : Position fixe permet de rester visible lors du défilement
+         aria-label et aria-expanded améliorent l'accessibilité pour les lecteurs d'écran -->
+    <nav class="main-nav" aria-label="Main navigation">
+        <div class="nav-links">
+            <!-- Utilisation de liens d'ancrage (#home, #club) pour une navigation avec défilement fluide -->
+            <a href="#home" class="nav-link">Accueil</a>
+            <a href="#club" class="nav-link">Clubs</a>
+            <a href="#stats" class="nav-link">Contenu</a>
+            <!-- Classe modificateur nav-link--primary : Méthodologie BEM pour les variations de style -->
+            <a href="#form" class="nav-link nav-link--primary">Formulaire</a>
+        </div>
+        <!-- Bouton menu hamburger : Caché par défaut, affiché sur mobile via les media queries CSS -->
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
     <main>
-        <!--HERO OF THE PAGE-->
+        <!-- SECTION HERO : Première impression visuelle de la page
+            Utilisation de la balise sémantique HTML5 <section> avec id pour la navigation par ancrage -->
         <section id="home" class="hero">
-            <!-- Background/underlay image -->
+            <!-- Logo positionné en absolu : Permet un placement précis sans affecter le flux de mise en page -->
+            <div class="hero__logo">
+                <img src="images/Sport Marketing Suisse Logo Design.png" alt="Sport Marketing Suisse" />
+            </div>
+
+            <!-- Image de fond décorative : aria-hidden="true" cache aux lecteurs d'écran car purement visuelle
+                 alt="" vide empêche le lecteur d'écran d'annoncer l'image -->
             <div class="hero__art" aria-hidden="true">
                 <img src="images/hero.png" alt="" />
             </div>
 
-            <!-- Text content (on top) -->
+            <!-- Contenu texte : Positionné avec z-index pour apparaître au-dessus de l'image de fond
+                 Utilisation de h1 sémantique pour le titre principal (un seul par page pour le SEO) -->
             <div class="hero__content">
                 <h1>
                     Le football romand a déjà un public : il lui manque une stratégie digitale.
                 </h1>
+                <!-- Attribut data-bind-global : Attribut de données personnalisé pour JavaScript afin d'insérer dynamiquement le compte
+                     Cela sépare le contenu de la logique, facilitant les mises à jour -->
                 <p>Ce rapport analyse la présence digitale de <span data-bind-global="count"></span>
-                    romands pour en révéler les forces, les faiblesses et les leviers d’engagement.</p>
+                    romands pour en révéler les forces, les faiblesses et les leviers d'engagement.</p>
             </div>
         </section>
 
 
-        <!--Club grid photo-->
+        <!-- SECTION CLUBS : Conteneur pour les logos d'équipes générés dynamiquement
+            La section teamList vide sera remplie par JavaScript en utilisant des templates -->
         <section id="club">
             <section id="teamList"></section>
         </section>
 
-        <!--Stats-->
-       <!--Stats-->
-      <section id="stats">
-        <h2>Que contient le rapport ?</h2>
+        <!-- SECTION STATS/CONTENU : Motif de mise en page alterné pour l'intérêt visuel
+            Chaque div text_image alterne les couleurs de fond et les positions d'image -->
+        <section id="stats">
+            <h2>Que contient le rapport ?</h2>
  
-        <div class="text_image">
-          <div class="section_left">
-            <h3>Un audit de grand ampleur</h3>
-            <p> <strong> 848</strong> pages d’analyse approfondie offrant une vision claire et détaillée des écosystèmes digitaux <br> des clubs de football romands, pour comprendre leur organisation, leurs pratiques, leurs forces <br>et leurs axes d’amélioration.</p>
-          </div>
+            <!-- Mise en page Flexbox : section_left (texte) et section_right (image) côte à côte
+                 Les arrière-plans alternés créent un rythme visuel et améliorent la lisibilité -->
+            <div class="text_image">
+                <div class="section_left">
+                    <!-- Utilisation de <strong> pour l'emphase : HTML sémantique pour les nombres importants -->
+                    <h3>Un audit de grand ampleur</h3>
+                    <p><strong>848</strong> pages d'analyse approfondie offrant une vision claire et détaillée des écosystèmes digitaux des clubs de football romands, pour comprendre leur organisation, leurs pratiques, leurs forces et leurs axes d'amélioration.</p>
+                </div>
  
-          <div class="section_right">
-            <img class="image_stats" src="./images/book3.png" alt="image of stats" />
-          </div>
-        </div>
-        <div class="text_image">
-          <div class="section_left">
-            <h3>Point de comparaison du football romand</h3>
-            <p><strong>30</strong> clubs audités issus de différentes régions et niveaux, permettant une comparaison des forces et faiblesses. Chaque club est évalué selon des critères identiques pour identifier des tendances communes et des opportunités concrètes</p>
-          </div>
+                <div class="section_right">
+                    <img class="image_stats" src="./images/book3.png" alt="image of stats" />
+                </div>
+            </div>
+            <div class="text_image">
+                <div class="section_left">
+                    <h3>Point de comparaison du football romand</h3>
+                    <p><strong>30</strong> clubs audités issus de différentes régions et niveaux, permettant une comparaison des forces et faiblesses. Chaque club est évalué selon des critères identiques pour identifier des tendances communes et des opportunités concrètes</p>
+                </div>
  
-          <div class="section_right">
-            <img class="image_stats" src="./images/Football.png" alt="image of stats" />
-          </div>
-        </div>
-        <div class="text_image">
-          <div class="section_left">
-            <h3>Comprendre les usages et attentes de fans</h3>
-            <p>Le rapport explore comment les clubs communiquent, interagissent et engagent leur communauté en ligne, br notamment les plus jeunes, pour mieux répondre aux attentes de la génération Z.</p>
-          </div>
+                <div class="section_right">
+                    <img class="image_stats" src="./images/Football.png" alt="image of stats" />
+                </div>
+            </div>
+            <div class="text_image">
+                <div class="section_left">
+                    <h3>Comprendre les usages et attentes de fans</h3>
+                    <p>Le rapport explore comment les clubs communiquent, interagissent et engagent leur communauté en ligne, notamment les plus jeunes, pour mieux répondre aux attentes de la génération Z.</p>
+                </div>
  
-          <div class="section_right">
-            <img class="image_stats" src="./images/mobile-front-color.png" alt="image of stats" />
-          </div>
-        </div>
-        <div class="text_image">
-          <div class="section_left">
-            <h3>Transformer la visibilité en opportunité</h3>
-            <p>L’analyse met en évidence des opportunités pour développer la présence digitale des clubs : attirer des sponsors, renforcer les partenariats et accroître la visibilité locale tout en aidant chacun à mieux se positionner dans le paysage romand.</p>
-          </div>
+                <div class="section_right">
+                    <img class="image_stats" src="./images/mobile-front-color.png" alt="image of stats" />
+                </div>
+            </div>
+            <div class="text_image">
+                <div class="section_left">
+                    <h3>Transformer la visibilité en opportunité</h3>
+                    <p>L'analyse met en évidence des opportunités pour développer la présence digitale des clubs : attirer des sponsors, renforcer les partenariats et accroître la visibilité locale tout en aidant chacun à mieux se positionner dans le paysage romand.</p>
+                </div>
  
-          <div class="section_right">
-            <img class="image_stats" src="./images/megaphone-front-color.png" alt="image of stats" />
-          </div>
-        </div>
+                <div class="section_right">
+                    <img class="image_stats" src="./images/megaphone-front-color.png" alt="image of stats" />
+                </div>
+            </div>
 
+            <!-- SECTION FORMULAIRE : Imbriquée dans la section stats pour l'intégration visuelle
+                Le formulaire utilise les types d'input appropriés (email) pour l'optimisation du clavier mobile -->
             <section id="form">
-
                 <form id="downloadForm">
-
                     <h1>Formulaire</h1>
-
+                    <!-- Attributs des inputs : name pour la soumission du formulaire, placeholder pour l'UX, required pour la validation
+                         L'utilisation de types d'input sémantiques (email) déclenche l'optimisation du clavier mobile -->
                     <input type="text" name="lastName" placeholder="Nom" required />
-
                     <input type="text" name="firstName" placeholder="Prénom" required />
-
                     <input type="email" name="email" placeholder="Email" required />
-
-
-
+                    <!-- Case à cocher avec label : L'association correcte du label (for/id) améliore l'accessibilité
+                         Les utilisateurs peuvent cliquer sur le label pour activer/désactiver la case -->
                     <div id="checkbox-container">
-
                         <input type="checkbox" name="newsletterAgreement" id="consent" />
-
                         <label for="consent">J'accepte de recevoir la newsletter</label>
-
                     </div>
-
-
-
+                    <!-- Conteneur de messages dynamiques : JavaScript injectera les messages de succès/erreur ici -->
                     <div id="messageContainer"></div>
-
-
-
                     <button type="submit">Télécharger</button>
-
                 </form>
             </section>
-
-            <!-- data-bind-global="count" : Affiche le nombre total de rapports (métadonnées globales) -->
-            <!-- id="teamList" : Conteneur où seront ajoutés dynamiquement les éléments de l'équipe. Le nom de cet ID ne doit pas être modifié.-->
-
-            <!-- id="messageContainer" : Conteneur pour afficher les messages de succès ou d'erreur. Le nom de cet ID ne doit pas être modifié.-->
-
-            <!-- id="downloadForm" : Formulaire pour télécharger le PDF. Le nom de cet ID ne doit pas être modifié.-->
         </section>
     </main>
+    <!-- PIED DE PAGE : Élément footer sémantique avec navigation
+        rel="noopener" empêche la vulnérabilité de sécurité lors de l'ouverture de liens externes -->
     <footer class="site-footer">
-        <div class="footer-topbar"></div>
         <div class="footer-inner">
             <a class="footer-link" href="#" target="_blank" rel="noopener">GitHub Repo</a>
+            <!-- Élément nav imbriqué : Structure sémantique appropriée pour la navigation du footer -->
             <nav class="footer-nav" aria-label="Footer links">
-                <a class="footer-link" href="#">Rapport d’analyse - Football suisse romand</a>
+                <a class="footer-link" href="#">Rapport d'analyse - Football suisse romand</a>
                 <a class="footer-link" href="#">Projet pédagogique - HEIG 2026</a>
             </nav>
         </div>

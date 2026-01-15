@@ -1,14 +1,14 @@
-/* 1. Use a more-intuitive box-sizing model */
+/* 1. Utiliser un modèle de box-sizing plus intuitif */
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
-/* 2. Remove default margin */
+/* 2. Supprimer les marges par défaut */
 *:not(dialog) {
   margin: 0;
 }
 
-/* 3. Enable keyword animations */
+/* 3. Activer les animations de mots-clés */
 @media (prefers-reduced-motion: no-preference) {
   html {
     interpolate-size: allow-keywords;
@@ -16,29 +16,29 @@
 }
 
 body {
-  /* 4. Add accessible line-height */
+  /* 4. Ajouter une hauteur de ligne accessible */
   line-height: 1.5;
-  /* 5. Improve text rendering */
+  /* 5. Améliorer le rendu du texte */
   -webkit-font-smoothing: antialiased;
 }
 
-/* 6. Improve media defaults */
+/* 6. Améliorer les valeurs par défaut des médias */
 img, picture, video, canvas, svg {
   display: block;
   max-width: 100%;
 }
 
-/* 7. Inherit fonts for form controls */
+/* 7. Hériter des polices pour les contrôles de formulaire */
 input, button, textarea, select {
   font: inherit;
 }
 
-/* 8. Avoid text overflows */
+/* 8. Éviter les débordements de texte */
 p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
 }
 
-/* 9. Improve line wrapping */
+/* 9. Améliorer le retour à la ligne */
 p {
   text-wrap: pretty;
 }
@@ -47,7 +47,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*
-  10. Create a root stacking context
+  10. Créer un contexte d'empilement racine
 */
 #root, #__next {
   isolation: isolate;

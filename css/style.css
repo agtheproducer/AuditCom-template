@@ -1,21 +1,204 @@
+/* CSS Reset : Normalise les styles par défaut du navigateur pour un rendu cohérent entre navigateurs */
 @import "reset.css";
 
+/* PROPRIÉTÉS CSS PERSONNALISÉES (Variables) : Système de design centralisé
+   Avantages : Changements de thème faciles, valeurs cohérentes, maintenabilité
+   Toutes les couleurs, typographie, espacements définis ici pour réutilisation dans les feuilles de style */
 :root {
-    --background-color: white;
-    --font-text: black;
+    /* Palette de couleurs : Couleurs de marque définies pour la cohérence
+       Vert primaire (#B8D279) utilisé dans tout le site pour l'identité de marque
+       Vert foncé (#27543A) pour les boutons et l'emphase
+       Vert clair (#c4db9f) pour les arrière-plans alternés */
+    --color-primary: #B8D279;
+    --color-primary-dark: #27543A;
+    --color-primary-light: #c4db9f;
+    --color-bg-white: #ffffff;
+    --color-bg-black: #000000;
+    --color-text: #000000;
+    --color-text-light: #333333;
+    --color-border: #484848;
+    
+    /* Échelle de typographie : Tailles de police responsive utilisant clamp()
+       clamp(min, préféré, max) crée une typographie fluide qui s'adapte en douceur
+       Les unités basées sur le viewport (vw) rendent le texte responsive à la taille d'écran
+       Pile de polices : Helvetica (primaire), Arial (fallback), sans-serif (générique) */
+    --font-family: Helvetica, Arial, sans-serif;
+    --font-size-base: clamp(16px, 1.8vw, 18px);
+    --font-size-xs: clamp(12px, 1.2vw, 14px);
+    --font-size-sm: clamp(14px, 1.5vw, 16px);
+    --font-size-lg: clamp(18px, 2vw, 20px);
+    --font-size-xl: clamp(24px, 3vw, 28px);
+    --font-size-2xl: clamp(32px, 4vw, 40px);
+    --font-size-3xl: clamp(40px, 5vw, 64px);
+    --font-weight-normal: 400;
+    --font-weight-medium: 600;
+    --font-weight-bold: 900;
+    /* Hauteurs de ligne : Serré pour les titres, normal pour le corps, détendu pour la lisibilité */
+    --line-height-tight: 1.1;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.75;
+    
+    /* Système d'espacement : Échelle d'espacement cohérente utilisant clamp()
+       L'espacement responsive s'adapte à la taille du viewport
+       Convention de nommage (xs, sm, md, lg, xl, 2xl) suit les standards des systèmes de design */
+    --spacing-xs: clamp(0.5rem, 1vw, 0.75rem);
+    --spacing-sm: clamp(1rem, 2vw, 1.5rem);
+    --spacing-md: clamp(1.5rem, 3vw, 2rem);
+    --spacing-lg: clamp(2rem, 4vw, 3rem);
+    --spacing-xl: clamp(3rem, 6vw, 4rem);
+    --spacing-2xl: clamp(4rem, 8vw, 6rem);
+    
+    /* Constantes de mise en page : Les largeurs max empêchent le contenu d'être trop large
+       Le padding responsive s'adapte au viewport
+       Valeurs de border-radius pour des coins arrondis cohérents */
+    --container-max-width: 1200px;
+    --container-padding: clamp(1rem, 4vw, 2rem);
+    --border-radius: 12px;
+    --border-radius-lg: 30px;
+    
+    /* Effets visuels : Présélections d'ombres et de transitions
+       Les ombres créent une hiérarchie de profondeur (sm < md < lg)
+       Durées de transition pour un timing d'animation cohérent */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+    --transition-fast: 150ms ease;
+    --transition-normal: 300ms ease;
+    --transition-slow: 500ms ease;
 }
-img {
-    width: 30px;
-}
+
+/* Styles de base : Styles de fondation appliqués à HTML et body
+   L'utilisation de variables CSS assure la cohérence et facilite les changements de thème */
 html {
-    font-size: 18px;
+    font-size: var(--font-size-base);
+    /* Défilement fluide : Améliore l'UX lors du clic sur les liens d'ancrage */
+    scroll-behavior: smooth;
 }
+
 body {
-    font-family: Helvetica;
-    background-color: var(--background-color);
-    color: var(--font-text);
-    margin: 0 auto;
-    width: 100%;
+    font-family: var(--font-family);
+    background-color: var(--color-bg-white);
+    color: var(--color-text);
+    line-height: var(--line-height-normal);
+    /* Lissage des polices : Améliore le rendu du texte sur macOS/iOS
+       Rend les polices plus nettes et plus lisibles */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
+/* Classe utilitaire Container : Conteneur centré réutilisable
+   max-width empêche le contenu d'être trop large sur les grands écrans
+   margin: 0 auto centre le conteneur horizontalement
+   Le padding responsive s'adapte à la taille du viewport */
+.container {
+    width: 100%;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
 
+/* Styles de base des boutons : Composant bouton réutilisable
+   inline-flex : Permet l'alignement flexbox tout en maintenant le comportement inline
+   Le padding responsive s'adapte au viewport
+   white-space: nowrap empêche le texte du bouton de se retourner à la ligne
+   Transition fournit des changements d'état hover/active fluides */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(0.75rem, 1.5vw, 1rem) clamp(1.5rem, 3vw, 2rem);
+    font-family: var(--font-family);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    text-decoration: none;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    white-space: nowrap;
+}
+
+.btn--primary {
+    background-color: var(--color-primary-dark);
+    color: var(--color-bg-white);
+    box-shadow: var(--shadow-md);
+}
+
+.btn--primary:hover {
+    background-color: #1e3d2a;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn--primary:active {
+    transform: translateY(0);
+}
+
+.btn--secondary {
+    background-color: transparent;
+    color: var(--color-text);
+    border: 2px solid var(--color-text);
+}
+
+.btn--secondary:hover {
+    background-color: var(--color-text);
+    color: var(--color-bg-white);
+}
+
+.btn--submit {
+    width: 100%;
+    padding: clamp(1rem, 2vw, 1.25rem);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    background: linear-gradient(135deg, var(--color-primary-dark) 0%, #1e3d2a 100%);
+    color: var(--color-bg-white);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn--submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(39, 84, 58, 0.3);
+}
+
+.btn--submit:active {
+    transform: translateY(0);
+}
+
+/* Reset des images : Empêche les images de déborder des conteneurs
+   max-width: 100% rend les images responsive (réduit, jamais agrandit)
+   height: auto maintient le ratio d'aspect
+   display: block supprime les problèmes d'espacement inline */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Accessibilité : Respecte les préférences de mouvement de l'utilisateur
+   prefers-reduced-motion: no-preference signifie que l'utilisateur n'a pas désactivé les animations
+   Applique le défilement fluide uniquement si l'utilisateur est à l'aise avec le mouvement
+   Cela améliore l'accessibilité pour les utilisateurs avec des troubles vestibulaires */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+/* Styles de focus pour l'accessibilité : Conformité WCAG 2.1
+   :focus-visible n'affiche le contour que lors de la navigation au clavier (pas les clics de souris)
+   outline-offset crée un espace entre l'élément et l'anneau de focus (meilleure visibilité)
+   L'utilisation de la couleur de marque assure que les indicateurs de focus correspondent au système de design
+   Critique pour les utilisateurs de clavier et les utilisateurs de lecteurs d'écran */
+*:focus-visible {
+    outline: 2px solid var(--color-primary-dark);
+    outline-offset: 2px;
+}
+
+/* Styles de focus spécifiques pour les éléments interactifs
+   Assure que les boutons, liens et inputs ont des indicateurs de focus clairs */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+    outline: 2px solid var(--color-primary-dark);
+    outline-offset: 2px;
+}

@@ -1,66 +1,151 @@
+/* Titre de la section stats : Typographie responsive utilisant clamp()
+   margin-left: 5% crée un décalage d'alignement à gauche (pas seulement text-align: left)
+   clamp() adapte la police de 1.75rem à 2.5rem selon la largeur du viewport */
 #stats h2 {
-  text-align: left;
-  font-size: 2.5rem;
-  padding: 2rem 0;
-  margin-left: 5%;
-  background-color: #fff;
-  color: #000;
+    text-align: left;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    padding: 2rem 0;
+    margin-left: 5%;
+    background-color: #fff;
+    color: #000;
+    font-weight: 900;
 }
- 
+
+/* Mise en page texte-image : Flexbox crée une mise en page côte à côte
+   gap: 10rem fournit un grand espacement entre texte et image (crée de l'espace respiratoire)
+   margin-left: -3.5rem décale le conteneur pour s'aligner avec le bord de la page
+   align-items: center centre verticalement le contenu */
 .text_image {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 4rem;
-  gap: 10rem;
-  margin-left: -3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem;
+    gap: 10rem;
+    margin-left: -3.5rem;
 }
- 
-/* Gestion de la largeur des colonnes */
+
+/* Gestion de la largeur des colonnes : Utilisation de ratios flex pour une mise en page proportionnelle
+   flex: 3 signifie que le texte prend 3 parts, flex: 1 signifie que l'image prend 1 part
+   Cela crée une division 75%/25%, priorisant le contenu texte sur les images
+   Plus flexible que les largeurs fixes, s'adapte à la taille du conteneur */
 .section_left {
-  flex: 3;
+    flex: 3;
 }
- 
+
 .section_right {
-  flex: 1; /* Chacun prend 50% de l'espace disponible */
+    flex: 1;
 }
- 
+
+/* Images stats : aspect-ratio: 3/3 crée des images carrées (maintient une forme cohérente)
+   object-fit: cover assure que les images remplissent le conteneur sans distorsion
+   border-radius: 8px ajoute des coins arrondis subtils pour un look moderne */
 .image_stats {
-  width: 100%;
-  height: auto;
-  display: block;
-  aspect-ratio: 3/3;
-  object-fit: cover;
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 3/3;
+    object-fit: cover;
+    border-radius: 8px;
 }
- 
+
+/* Taille spéciale de la dernière image : :last-of-type cible la dernière section text_image
+   width: 70% rend la dernière image plus petite (choix de design pour la variété visuelle)
+   margin-right: auto aligne l'image à gauche dans son conteneur */
 .text_image:last-of-type .image_stats {
-  width: 70%;
-  display: block;
-  margin-right: auto;
+    width: 70%;
+    display: block;
+    margin-right: auto;
 }
- 
+
+/* Couleurs de fond alternées : Crée un rythme visuel et améliore la lisibilité
+   nth-of-type(odd) : Fond vert clair (#c4db9f) pour les sections impaires
+   nth-of-type(even) : Fond blanc pour les sections paires
+   flex-direction: row-reverse sur les sections paires alterne la position de l'image (gauche/droite)
+   Cela crée un motif de mise en page en zigzag, plus engageant qu'une mise en page uniforme */
 .text_image:nth-of-type(odd) {
-  background-color: #c4db9f;
-  padding: 1rem 10%;
+    background-color: #c4db9f;
+    padding: 1rem 10%;
 }
- 
+
 .text_image:nth-of-type(even) {
-  background-color: #ffffff;
-  padding: 1rem 10%;
+    background-color: #ffffff;
+    padding: 1rem 10%;
 }
- 
+
 .text_image:nth-of-type(even) {
-  flex-direction: row-reverse;
+    flex-direction: row-reverse;
 }
- 
+
 .section_left h3 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  font-weight: bold;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-bottom: 1rem;
+    font-weight: 900;
+    line-height: 1.2;
 }
- 
+
 .section_left p {
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #333;
+    font-size: clamp(16px, 1.8vw, 18px);
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Style du texte en gras : Met en évidence les nombres importants (848, 30, etc.)
+   La couleur vert foncé (#27543A) correspond à la marque et crée un accent visuel
+   font-weight: 900 fait ressortir les nombres du texte du corps */
+.section_left p strong {
+    font-weight: 900;
+    color: #27543A;
+}
+
+/* Responsive mobile : Point de rupture à 968px
+   !important sur flex-direction assure que la mise en page en colonne surcharge row-reverse
+   L'empilement vertical sur mobile améliore la lisibilité sur petits écrans
+   Le texte et les images centrés créent une mise en page mobile équilibrée
+   max-width: 300px empêche les images d'être trop grandes sur mobile */
+@media (max-width: 968px) {
+    .text_image {
+        flex-direction: column !important;
+        gap: 2rem;
+        padding: 2rem 1.5rem;
+        margin-left: 0;
+    }
+
+    .section_left {
+        text-align: center;
+    }
+
+    .section_right {
+        width: 100%;
+    }
+
+    .image_stats {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .text_image:last-of-type .image_stats {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    #stats h2 {
+        text-align: center;
+        margin-left: 0;
+        padding: 1.5rem 0;
+    }
+}
+
+@media (max-width: 640px) {
+    .text_image {
+        padding: 1.5rem 1rem;
+    }
+
+    .section_left h3 {
+        font-size: 1.25rem;
+    }
+
+    .section_left p {
+        font-size: 15px;
+    }
 }
