@@ -2,13 +2,14 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SportSystem</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/amit.css">
-    <link rel="stylesheet" href="css/marie.css">
-    <link rel="stylesheet" href="css/amel.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="amit.css" />
+    <link rel="stylesheet" href="marie.css" />
+    <link rel="stylesheet" href="amel.css" />
     <script src="src/main.js" type="module" defer></script>
 </head>
 
@@ -16,20 +17,21 @@
     <main>
         <!--HERO OF THE PAGE-->
         <section id="home" class="hero">
-            <div class="hero-left">
+            <!-- Background/underlay image -->
+            <div class="hero__art" aria-hidden="true">
+                <img src="images/hero.png" alt="" />
+            </div>
+
+            <!-- Text content (on top) -->
+            <div class="hero__content">
                 <h1>
-                    Plus que <span data-bind-global="count"></span> equipe de Suisse Romande
+                    Le football romand a déjà un public : il lui manque une stratégie digitale.
                 </h1>
-
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit...
-                </p>
+                <p>Ce rapport analyse la présence digitale de <span data-bind-global="count"></span>
+                    romands pour en révéler les forces, les faiblesses et les leviers d’engagement.</p>
             </div>
-            <div class="hero-right">
-                <img class="hero-illustration" src="images/hero.png" alt="Supporters celebrating">
-            </div>
-
         </section>
+
 
         <!--Club grid photo-->
         <section id="club">
@@ -47,7 +49,7 @@
                 </div>
 
                 <div class="section_right">
-                    <img class="image_stats" src="" alt="image of stats">
+                    <img class="image_stats" src="" alt="image of stats" />
                 </div>
             </div>
             <div class="text_image">
@@ -57,7 +59,7 @@
                 </div>
 
                 <div class="section_right">
-                    <img class="image_stats" src="" alt="image of stats">
+                    <img class="image_stats" src="" alt="image of stats" />
                 </div>
             </div>
             <div class="text_image">
@@ -67,7 +69,7 @@
                 </div>
 
                 <div class="section_right">
-                    <img class="image_stats" src="" alt="image of stats">
+                    <img class="image_stats" src="" alt="image of stats" />
                 </div>
             </div>
             <div class="text_image">
@@ -77,17 +79,17 @@
                 </div>
 
                 <div class="section_right">
-                    <img class="image_stats" src="" alt="image of stats">
+                    <img class="image_stats" src="" alt="image of stats" />
                 </div>
             </div>
 
             <section id="form">
                 <form id="downloadForm">
-                    <input type="text" name="lastName" placeholder="Nom" required>
-                    <input type="text" name="firstName" placeholder="Prénom" required>
-                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="text" name="lastName" placeholder="Nom" required />
+                    <input type="text" name="firstName" placeholder="Prénom" required />
+                    <input type="email" name="email" placeholder="Email" required />
 
-                    <input type="checkbox" name="newsletterAgreement" id="consent">
+                    <input type="checkbox" name="newsletterAgreement" id="consent" />
                     <label for="consent">J'accepte de recevoir la newsletter</label>
 
                     <button type="submit">Télécharger</button>
@@ -101,18 +103,20 @@
 
             <!-- id="messageContainer" : Conteneur pour afficher les messages de succès ou d'erreur. Le nom de cet ID ne doit pas être modifié.-->
 
-
-
             <!-- id="downloadForm" : Formulaire pour télécharger le PDF. Le nom de cet ID ne doit pas être modifié.-->
         </section>
     </main>
     <footer>
         <section class="logo_and_image">
-            <img class="logo" src="" alt="logo">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id illo consequuntur porro aut et esse? Nam,
-                modi.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id illo consequuntur porro aut et esse? Nam,
-                modi.</p>
+            <img class="logo" src="" alt="logo" />
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Id illo
+                consequuntur porro aut et esse? Nam, modi.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Id illo
+                consequuntur porro aut et esse? Nam, modi.
+            </p>
         </section>
         <nav>
             <a href="">Home</a>
