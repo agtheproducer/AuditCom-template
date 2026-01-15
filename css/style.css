@@ -1,12 +1,11 @@
 @import "reset.css";
-@import "amel.css";
 
 :root {
     --background-color: white;
     --font-text: black;
 }
 img {
-    width: 100px;
+    width: 30px;
 }
 html {
     font-size: 18px;
@@ -16,11 +15,7 @@ body {
     background-color: var(--background-color);
     color: var(--font-text);
     margin: 0 auto;
-    width: 80%;
+    width: 100%;
 }
-section#teamList {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-template-rows: auto auto auto auto;
-}
+
 

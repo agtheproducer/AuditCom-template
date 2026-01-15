@@ -77,7 +77,54 @@
   #home .hero__art img {
     position: static;
     width: auto;
-    height: 100rem;
+    height: 25rem;
     display: block;
   }
 }
+/*CLUB SECTION*/
+/* CLUB SECTION */
+#club{
+  background: #000;
+  padding: 3rem 2rem;
+}
+
+/* GRID CONTAINER */
+#teamList{
+  /* 6 columns like your wireframe */
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+
+  /* gap between logos */
+  gap: 3rem 3.5rem; /* row-gap, column-gap */
+
+  /* center grid and limit width */
+  max-width: 1200px;
+  margin: 0 auto;
+
+  /* nice vertical space */
+  padding: 1rem 0;
+}
+
+/* each team item (the template probably makes a wrapper div/li/article) */
+#teamList > *{
+  /* center content inside each cell */
+  display: grid;
+  place-items: center;
+
+  /* force equal “box” size like wireframe squares */
+  aspect-ratio: 1 / 1;
+
+  /* optional: for debugging / wireframe look */
+  /* background: rgba(255,255,255,0.06); */
+  /* border-radius: 12px; */
+}
+
+/* LOGO IMAGE sizing */
+#teamList img{
+  width: 100%;
+  max-width: 110px;   /* change this to increase logo size */
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
