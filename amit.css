@@ -1,0 +1,112 @@
+/* =========================
+   HERO (Amit) — matches mockup
+   ========================= */
+
+#home.hero {
+  background: #ececec;              /* light gray like the mockup */
+  border-radius: 12px;              /* optional; remove if you want sharp edges */
+  overflow: hidden;                 /* keeps image inside rounded corners */
+
+  /* Layout */
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+
+  /* Size + spacing */
+  min-height: 75vh;                 /* makes the hero tall like the screenshot */
+  padding: clamp(2rem, 5vw, 4rem);
+}
+
+/* Left area (big headline) */
+#home .hero-left {
+  flex: 1 1 55%;
+  max-width: 700px;
+  z-index: 2;                       /* stay above image */
+}
+
+#home .hero-left h1 {
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 900;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  color: #000;
+
+  /* big responsive title */
+  font-size: clamp(2.6rem, 4.5vw, 4.6rem);
+
+  margin: 0;
+}
+
+/* keep the number inline nicely */
+#home .hero-left h1 span[data-bind-global="count"] {
+  display: inline-block;
+  margin: 0 0.2em;
+}
+
+/* ✅ This paragraph in the mockup is centered near the bottom over the image
+   Your HTML has the <p> inside hero-left, so we reposition it with CSS.
+*/
+#home .hero-left p {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(1.5rem, 4vw, 3rem);
+  transform: translateX(-50%);
+
+  width: min(780px, 92%);
+  text-align: center;
+
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: clamp(0.95rem, 1.2vw, 1.2rem);
+  font-weight: 700;
+  line-height: 1.25;
+  color: #000;
+
+  z-index: 3; /* above the image */
+  margin: 0;
+}
+
+/* Right area (illustration) */
+#home .hero-right {
+  flex: 1 1 45%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  z-index: 1;
+}
+
+/* Override global img width:100px from style.css */
+#home .hero-illustration {
+  width: min(620px, 100%);
+  height: auto;
+  max-height: 70vh;
+  display: block;
+
+  /* anchor the image lower like the mockup */
+  align-self: flex-end;
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 900px) {
+  #home.hero {
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: auto;
+    padding-bottom: 7rem; /* space for the centered paragraph */
+  }
+
+  #home .hero-right {
+    width: 100%;
+    justify-content: center;
+  }
+
+  #home .hero-illustration {
+    max-height: none;
+    width: min(520px, 100%);
+  }
+
+  #home .hero-left p {
+    bottom: 1.25rem;
+  }
+}
