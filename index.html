@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SportSystem</title>
@@ -10,120 +11,120 @@
     <link rel="stylesheet" href="marie.css" />
     <link rel="stylesheet" href="amel.css" />
     <script src="src/main.js" type="module" defer></script>
-  </head>
+</head>
 
-  <body>
+<body>
     <main>
-      <!--HERO OF THE PAGE-->
-      <section id="home" class="hero">
-        <div class="hero-left">
-          <h1>
-            Plus que <span data-bind-global="count"></span> equipe de Suisse
-            Romande
-          </h1>
+        <!--HERO OF THE PAGE-->
+        <section id="home" class="hero">
+            <!-- Background/underlay image -->
+            <div class="hero__art" aria-hidden="true">
+                <img src="images/hero.png" alt="" />
+            </div>
 
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
-        </div>
-        <div class="hero-right">
-          <img
-            class="hero-illustration"
-            src="images/hero.png"
-            alt="Supporters celebrating"
-          />
-        </div>
-      </section>
-
-      <!--Club grid photo-->
-      <section id="club">
-        <section id="teamList"></section>
-      </section>
-
-      <!--Stats-->
-      <section id="stats">
-        <h2>Stats that are going to blow your mind</h2>
-
-        <div class="text_image">
-          <div class="section_left">
-            <h3>Title</h3>
-            <p>stats text...</p>
-          </div>
-
-          <div class="section_right">
-            <img class="image_stats" src="" alt="image of stats" />
-          </div>
-        </div>
-        <div class="text_image">
-          <div class="section_left">
-            <h3>Title</h3>
-            <p>stats text...</p>
-          </div>
-
-          <div class="section_right">
-            <img class="image_stats" src="" alt="image of stats" />
-          </div>
-        </div>
-        <div class="text_image">
-          <div class="section_left">
-            <h3>Title</h3>
-            <p>stats text...</p>
-          </div>
-
-          <div class="section_right">
-            <img class="image_stats" src="" alt="image of stats" />
-          </div>
-        </div>
-        <div class="text_image">
-          <div class="section_left">
-            <h3>Title</h3>
-            <p>stats text...</p>
-          </div>
-
-          <div class="section_right">
-            <img class="image_stats" src="" alt="image of stats" />
-          </div>
-        </div>
-
-        <section id="form">
-          <form id="downloadForm">
-            <input type="text" name="lastName" placeholder="Nom" required />
-            <input type="text" name="firstName" placeholder="Prénom" required />
-            <input type="email" name="email" placeholder="Email" required />
-
-            <input type="checkbox" name="newsletterAgreement" id="consent" />
-            <label for="consent">J'accepte de recevoir la newsletter</label>
-
-            <button type="submit">Télécharger</button>
-          </form>
-
-          <div id="messageContainer"></div>
+            <!-- Text content (on top) -->
+            <div class="hero__content">
+                <h1>
+                    Le football romand a déjà un public : il lui manque une stratégie digitale.
+                </h1>
+                <p>Ce rapport analyse la présence digitale de <span data-bind-global="count"></span>
+                    romands pour en révéler les forces, les faiblesses et les leviers d’engagement.</p>
+            </div>
         </section>
 
-        <!-- data-bind-global="count" : Affiche le nombre total de rapports (métadonnées globales) -->
-        <!-- id="teamList" : Conteneur où seront ajoutés dynamiquement les éléments de l'équipe. Le nom de cet ID ne doit pas être modifié.-->
 
-        <!-- id="messageContainer" : Conteneur pour afficher les messages de succès ou d'erreur. Le nom de cet ID ne doit pas être modifié.-->
+        <!--Club grid photo-->
+        <section id="club">
+            <section id="teamList"></section>
+        </section>
 
-        <!-- id="downloadForm" : Formulaire pour télécharger le PDF. Le nom de cet ID ne doit pas être modifié.-->
-      </section>
+        <!--Stats-->
+        <section id="stats">
+            <h2>Stats that are going to blow your mind</h2>
+
+            <div class="text_image">
+                <div class="section_left">
+                    <h3>Title</h3>
+                    <p>stats text...</p>
+                </div>
+
+                <div class="section_right">
+                    <img class="image_stats" src="" alt="image of stats" />
+                </div>
+            </div>
+            <div class="text_image">
+                <div class="section_left">
+                    <h3>Title</h3>
+                    <p>stats text...</p>
+                </div>
+
+                <div class="section_right">
+                    <img class="image_stats" src="" alt="image of stats" />
+                </div>
+            </div>
+            <div class="text_image">
+                <div class="section_left">
+                    <h3>Title</h3>
+                    <p>stats text...</p>
+                </div>
+
+                <div class="section_right">
+                    <img class="image_stats" src="" alt="image of stats" />
+                </div>
+            </div>
+            <div class="text_image">
+                <div class="section_left">
+                    <h3>Title</h3>
+                    <p>stats text...</p>
+                </div>
+
+                <div class="section_right">
+                    <img class="image_stats" src="" alt="image of stats" />
+                </div>
+            </div>
+
+            <section id="form">
+                <form id="downloadForm">
+                    <input type="text" name="lastName" placeholder="Nom" required />
+                    <input type="text" name="firstName" placeholder="Prénom" required />
+                    <input type="email" name="email" placeholder="Email" required />
+
+                    <input type="checkbox" name="newsletterAgreement" id="consent" />
+                    <label for="consent">J'accepte de recevoir la newsletter</label>
+
+                    <button type="submit">Télécharger</button>
+                </form>
+
+                <div id="messageContainer"></div>
+            </section>
+
+            <!-- data-bind-global="count" : Affiche le nombre total de rapports (métadonnées globales) -->
+            <!-- id="teamList" : Conteneur où seront ajoutés dynamiquement les éléments de l'équipe. Le nom de cet ID ne doit pas être modifié.-->
+
+            <!-- id="messageContainer" : Conteneur pour afficher les messages de succès ou d'erreur. Le nom de cet ID ne doit pas être modifié.-->
+
+            <!-- id="downloadForm" : Formulaire pour télécharger le PDF. Le nom de cet ID ne doit pas être modifié.-->
+        </section>
     </main>
     <footer>
-      <section class="logo_and_image">
-        <img class="logo" src="" alt="logo" />
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Id illo
-          consequuntur porro aut et esse? Nam, modi.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Id illo
-          consequuntur porro aut et esse? Nam, modi.
-        </p>
-      </section>
-      <nav>
-        <a href="">Home</a>
-        <a href="">Club</a>
-        <a href="">Stats</a>
-        <a href="">Form</a>
-      </nav>
+        <section class="logo_and_image">
+            <img class="logo" src="" alt="logo" />
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Id illo
+                consequuntur porro aut et esse? Nam, modi.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Id illo
+                consequuntur porro aut et esse? Nam, modi.
+            </p>
+        </section>
+        <nav>
+            <a href="">Home</a>
+            <a href="">Club</a>
+            <a href="">Stats</a>
+            <a href="">Form</a>
+        </nav>
     </footer>
-  </body>
+</body>
+
 </html>
