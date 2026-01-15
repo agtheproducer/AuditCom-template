@@ -85,17 +85,20 @@
 
             <section id="form">
                 <form id="downloadForm">
+                    <h1>Formulaire</h1>
                     <input type="text" name="lastName" placeholder="Nom" required />
                     <input type="text" name="firstName" placeholder="Prénom" required />
                     <input type="email" name="email" placeholder="Email" required />
 
-                    <input type="checkbox" name="newsletterAgreement" id="consent" />
-                    <label for="consent">J'accepte de recevoir la newsletter</label>
+                    <div id="checkbox-container">
+                        <input type="checkbox" name="newsletterAgreement" id="consent" />
+                        <label for="consent">J'accepte de recevoir la newsletter</label>
+                    </div>
+
+                    <div id="messageContainer"></div>
 
                     <button type="submit">Télécharger</button>
                 </form>
-
-                <div id="messageContainer"></div>
             </section>
 
             <!-- data-bind-global="count" : Affiche le nombre total de rapports (métadonnées globales) -->
