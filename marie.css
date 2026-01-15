@@ -1,58 +1,93 @@
-@import url("css/reset.css"); /*A MODIFIER SELON L'EMPLACEMENT*/
+@import url("css/reset.css");
+/*A MODIFIER SELON L'EMPLACEMENT*/
+
 @import url("css/style.css");
 
-section#form{
-    background : linear-gradient(to top, #B8D279 0%, #B8D279 50%, transparent 50%, transparent 100%);
-    padding:4rem;
-}
+section#form {
 
+    background: linear-gradient(to top, #B8D279 0%, #B8D279 50%, transparent 50%, transparent 100%);
+
+    padding: 4rem;
+
+    padding: 4rem;
+
+}
 form {
+
     border: 1px solid #484848;
+
     border-radius: 30px;
     background-color: rgb(255, 254, 254);
     width: 80%;
     margin: 0 auto;
     padding: 2rem;
-}
 
-#downloadForm h1{
+}
+#downloadForm h1 {
+
     text-align: center;
-    margin-bottom: 1rem;
-}
 
+    margin-bottom: 1rem;
+
+}
 #downloadForm input[type="text"],
+
 #downloadForm input[type="email"] {
+
     border: 1px solid #484848;
+
     border-radius: 10px;
 
+
+
     display: block;
+
     width: 100%;
 
+
+
     padding: 1rem;
-    margin-bottom: 1rem; 
-}
 
-#downloadForm button{
-    border: 0;
-    padding : 0.6rem 2rem;
-    background-color: #27543A;
-    color: white;
-    border-radius: 10px;
-    
-    display: block;
-    margin: 0 auto;
-}
-
-#downloadForm #messageContainer{
-    margin: 0 auto;
-    padding: 1rem;
-    text-align: center;
-}
-
-#checkbox-container{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
     margin-bottom: 1rem;
+
+}
+#downloadForm button {
+
+    border: 0;
+
+    padding: 0.6rem 2rem;
+
+    background-color: #27543A;
+
+    color: white;
+
+    border-radius: 10px;
+
+
+
+    display: block;
+
+    margin: 0 auto;
+
+}
+#downloadForm #messageContainer {
+
+    margin: 0 auto;
+
+    padding: 1rem;
+
+    text-align: center;
+
+}
+#checkbox-container {
+
+    display: flex;
+
+    justify-content: flex-start;
+
+    align-items: center;
+
+    margin-bottom: 1rem;
+
     gap: 1rem;
-} 
+}

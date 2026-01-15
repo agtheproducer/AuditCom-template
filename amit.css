@@ -1,6 +1,6 @@
 /* HERO */
 #home.hero {
-   background : linear-gradient(to top, #B8D279 0%, #B8D279 50%, transparent 50%, transparent 100%);
+   background : #B8D279;
     border-radius: 12px;
     overflow: hidden;
 

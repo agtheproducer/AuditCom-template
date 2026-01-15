@@ -1,15 +1,66 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+#stats h2 {
+  text-align: left;
+  font-size: 2.5rem;
+  padding: 2rem 0;
+  margin-left: 5%;
+  background-color: #fff;
+  color: #000;
 }
-
-/* Titre principal de la section */
-#stats > h2 {
-    text-align: left;
-    font-size: 2.5rem;
-    padding: 3rem 0;
-    margin: 0;
-    background-color: #fff; /* S'assure que le titre est sur fond blanc */
-    color: #741c1c;
+ 
+.text_image {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem;
+  gap: 10rem;
+  margin-left: -3.5rem;
+}
+ 
+/* Gestion de la largeur des colonnes */
+.section_left {
+  flex: 3;
+}
+ 
+.section_right {
+  flex: 1; /* Chacun prend 50% de l'espace disponible */
+}
+ 
+.image_stats {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 3/3;
+  object-fit: cover;
+}
+ 
+.text_image:last-of-type .image_stats {
+  width: 70%;
+  display: block;
+  margin-right: auto;
+}
+ 
+.text_image:nth-of-type(odd) {
+  background-color: #c4db9f;
+  padding: 1rem 10%;
+}
+ 
+.text_image:nth-of-type(even) {
+  background-color: #ffffff;
+  padding: 1rem 10%;
+}
+ 
+.text_image:nth-of-type(even) {
+  flex-direction: row-reverse;
+}
+ 
+.section_left h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+ 
+.section_left p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
 }
