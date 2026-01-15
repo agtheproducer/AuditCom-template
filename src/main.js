@@ -8,7 +8,7 @@ import { fillTemplate, fillGlobals } from "./templating.js";
 const BASE_URL = "https://auditcom.onrender.com";
 const API_URL = `${BASE_URL}/api`;
 const ESTIMATED_FILE_SIZE_MB = 250;
-const PROGRESS_UPDATE_INTERVAL_MS = 50;
+const PROGRESS_UPDATE_INTERVAL_MS = 10;
 const SUCCESS_MESSAGE_DURATION_MS = 5000;
 const PDF_FILENAME = "rapport-auditcom.pdf";
 
