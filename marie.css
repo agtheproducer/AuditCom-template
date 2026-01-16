@@ -1,9 +1,14 @@
-/* SECTION FORMULAIRE : Le fond en dégradé crée une transition visuelle depuis la section stats
-   Dégradé linéaire : Vert (#B8D279) pour les 50% supérieurs, transparent pour les 50% inférieurs
-   Cela crée un effet de fondu, intégrant le formulaire au design de la page */
+/* SECTION FORMULAIRE : Fond vert plein pour que le vert touche directement le footer noir
+   Le fond vert s'étend jusqu'en bas pour créer une transition directe avec le footer
+   Flexbox pour centrer le formulaire horizontalement et verticalement */
 section#form {
-    background: linear-gradient(to top, #B8D279 0%, #B8D279 50%, transparent 50%, transparent 100%);
+    background: #B8D279;
     padding: 4rem;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
 }
 
 /* Conteneur du formulaire : Centré avec max-width pour une largeur optimale du formulaire

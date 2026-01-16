@@ -44,10 +44,10 @@
         <div class="nav-links">
             <!-- Utilisation de liens d'ancrage (#home, #club) pour une navigation avec défilement fluide -->
             <a href="#home" class="nav-link">Accueil</a>
-            <a href="#club" class="nav-link">Clubs</a>
-            <a href="#stats" class="nav-link">Contenu</a>
+            <a href="#club" class="nav-link"><span data-bind-global="count"></span> clubs</a>
+            <a href="#stats" class="nav-link">Highlights</a>
             <!-- Classe modificateur nav-link--primary : Méthodologie BEM pour les variations de style -->
-            <a href="#form" class="nav-link nav-link--primary">Formulaire</a>
+            <a href="#form" class="nav-link nav-link--primary">Télécharger</a>
         </div>
         <!-- Bouton menu hamburger : Caché par défaut, affiché sur mobile via les media queries CSS -->
         <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
@@ -62,7 +62,7 @@
         <section id="home" class="hero">
             <!-- Logo positionné en absolu : Permet un placement précis sans affecter le flux de mise en page -->
             <div class="hero__logo">
-                <img src="images/Sport Marketing Suisse Logo Design.png" alt="Sport Marketing Suisse" />
+                <img src="images/Sport Marketing Suisse Logo Design (1).png" alt="Sport Marketing Suisse" />
             </div>
 
             <!-- Image de fond décorative : aria-hidden="true" cache aux lecteurs d'écran car purement visuelle
@@ -144,7 +144,7 @@
                 Le formulaire utilise les types d'input appropriés (email) pour l'optimisation du clavier mobile -->
             <section id="form">
                 <form id="downloadForm">
-                    <h1>Formulaire</h1>
+                    <h1>Télécharger maintenant</h1>
                     <!-- Attributs des inputs : name pour la soumission du formulaire, placeholder pour l'UX, required pour la validation
                          L'utilisation de types d'input sémantiques (email) déclenche l'optimisation du clavier mobile -->
                     <input type="text" name="lastName" placeholder="Nom" required />
@@ -154,7 +154,7 @@
                          Les utilisateurs peuvent cliquer sur le label pour activer/désactiver la case -->
                     <div id="checkbox-container">
                         <input type="checkbox" name="newsletterAgreement" id="consent" />
-                        <label for="consent">J'accepte de recevoir la newsletter</label>
+                        <label for="consent">Je m’abonne à la newsletter (actualités sportives 1x par mois)</label>
                     </div>
                     <!-- Conteneur de messages dynamiques : JavaScript injectera les messages de succès/erreur ici -->
                     <div id="messageContainer"></div>
@@ -170,8 +170,8 @@
             <a class="footer-link" href="https://github.com/agtheproducer/AuditCom-template" target="_blank" rel="noopener">GitHub Repo</a>
             <!-- Élément nav imbriqué : Structure sémantique appropriée pour la navigation du footer -->
             <nav class="footer-nav" aria-label="Footer links">
-                <a class="footer-link" href="#">Rapport d'analyse - Football suisse romand</a>
-                <a class="footer-link" href="#">Projet pédagogique - HEIG 2026</a>
+                <a class="footer-link" href="https://auditcom.notion.site/">Rapport d'analyse - Football suisse romand</a>
+                <a class="footer-link" href="https://heig-vd.ch/">Projet pédagogique - HEIG 2026</a>
                 <a class="footer-link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1" target="_blank" rel="noopener">Policy</a>
             </nav>
         </div>
